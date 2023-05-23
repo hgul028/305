@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity LFSR8 is
+	port (clk    : in  std_logic;
+         output : out std_logic_vector (7 downto 0));
+end LFSR8;
+
+architecture LFSR8_beh of LFSR8 is
+	signal r_lfsr: std_logic_vector (8 downto 1) := (others => '1');
+	signal feedback: std_logic;
+begin
+
+--	StateReg: process (clk)
+--	begin
+	--	if (clk = '1' and clk'event) then
+	--		r_lfsr <= r_lfsr(r_lfsr'left-1 downto 1) & feedback;
+	--	end if;
+	--end process StateReg;
+  
+	--feedback <= r_lfsr(8) xnor r_lfsr(6) xnor r_lfsr(5) xnor r_lfsr(4);
+	--output <= r_lfsr(r_lfsr'left downto 1); -- 8 bits
+	
+	output <= '11111111';
+
+end LFSR8_beh;

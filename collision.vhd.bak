@@ -1,0 +1,11 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_ARITH.all;
+
+entity collision is
+  port(game_state : in std_logic_vector(1 downto 0);
+    bird_on, pipe_on : in std_logic;
+    pipe_collsion : out std_logic);
+end entity collision;
+
+    

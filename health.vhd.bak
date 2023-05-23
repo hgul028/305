@@ -1,0 +1,18 @@
+entity health is
+	port(vert_sync : in std_logic;
+		pause : in std_logic;
+		pipe_collsion : in std_logic;
+		power1_collsion, power2_collision, power3_collision : in std_logic;
+		dead : out std_logic);
+end entity health;
+
+
+architecture behaviour of health is
+begin
+
+end architecture behaviour;
+
+
+
+
+		

@@ -1,0 +1,27 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_ARITH.all;
+
+entity state_controller is
+port(btn_reset, btn_start, btn_pause, dead : in std_logic;
+	sw_gamemode : in std_logic;
+	game_state : out std_logic_vector(1 downto 0));
+end entity state_controller;
+
+architecture behaviour of state_controller is
+signal s_game_state : std_logic_vector(1 downto 0) := "00"; --main menu screen
+begin
+  
+  process(btn_reset, btn_start, btn_pause, dead)
+    begin
+ 
+  end process;
+  
+  s_game_state <= "01" when sw_gamemode = '0' AND btn_start = '1' AND s_game_state = "00" else
+                  "10" when sw_gamemode = '1' AND btn_start = AND s_game_state = "00" else
+                  "11" when dead = '1';               
+  game_state <= s_game_state; 
+end architecture behaviour;
+
+
+	

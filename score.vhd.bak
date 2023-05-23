@@ -1,0 +1,59 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_SIGNED.all;
+USE IEEE.NUMERIC_STD.ALL;
+
+entity score is
+	port(	clk	        : in std_logic;
+			--reset_clk   : in std_logic;
+			game_state : in std_logic_vector(1 downto 0);
+			score_out   : out std_logic_vector(13 downto 0); -- Fourteen bits to count up to 9999
+			all_off   : out std_logic);
+end score;
+
+architecture score_counter of score is
+	signal count     : integer   := 1;
+	signal tmp       : std_logic := '0';
+	signal clk_out   : std_logic;
+	signal score_tmp : std_logic_vector(13 downto 0);
+begin
+
+Clk_Divider : process(clk) -- add reset_clk
+begin
+	--if(reset_clk = '1') then
+	--	count<=1;
+	--	tmp<='0'; add elsif
+	if (rising_edge(clk)) then
+		count <=count+1;
+		if (count = 25000000) then --25000000
+			tmp <= NOT tmp;
+			count <= 1;
+		end if;
+	end if;
+	clk_out <= tmp;
+end process;
+
+Count_Score : process(clk_out) -- add reset_score and clk_out
+	variable v_all_off : std_logic := '0';
+begin
+	if (game_state = "00") then -- reset at main menu
+		score_tmp <= "00000000000000";
+	elsif (game_state = "11") then
+		if (v_all_off = '1') then
+			v_all_off := '0';
+			all_off <= '0';
+		else
+			v_all_off := '1';
+			all_off <= '1';
+		end if;
+	elsif (rising_edge(clk_out)) then
+		if (to_integer(unsigned(score_tmp)) > 9999) then
+			score_tmp <= "00000000000000";
+		else
+			score_tmp <= std_logic_vector(to_unsigned(to_integer(unsigned(score_tmp)) + 1, 14));
+		end if;
+	end if;
+	score_out <= score_tmp;
+end process Count_Score;
+
+end architecture score_counter;

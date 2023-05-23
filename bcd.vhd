@@ -1,0 +1,104 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_SIGNED.all;
+USE IEEE.NUMERIC_STD.ALL;
+
+entity bcd is
+	port(	
+			score     : in std_logic_vector(13 downto 0); -- Fourteen bits to count up to 9999
+			all_off   : in std_logic;
+			led0_out  : out std_logic_vector(6 downto 0);
+			led1_out  : out std_logic_vector(6 downto 0);
+			led2_out  : out std_logic_vector(6 downto 0);
+			led3_out  : out std_logic_vector(6 downto 0));
+end bcd;
+
+
+architecture display_score of bcd is
+	signal digit0 : std_logic_vector(3 downto 0);
+	signal digit1 : std_logic_vector(3 downto 0);
+	signal digit2 : std_logic_vector(3 downto 0);
+	signal digit3 : std_logic_vector(3 downto 0);
+begin
+
+
+Get_Digits : process(score)
+	variable score_int : integer;
+begin
+	score_int := to_integer(unsigned(score));
+	digit0 <= std_logic_vector(to_unsigned(score_int mod 10, 4));
+	score_int := score_int / 10;
+	digit1 <= std_logic_vector(to_unsigned(score_int mod 10, 4));
+	score_int := score_int / 10;
+	digit2 <= std_logic_vector(to_unsigned(score_int mod 10, 4));
+	score_int := score_int / 10;
+	digit3 <= std_logic_vector(to_unsigned(score_int mod 10, 4));
+end process Get_Digits;
+
+
+Display_Digits : process(score, all_off)
+begin
+	if (all_off = '1') then
+		led0_out <= "1111111";
+		led1_out <= "1111111";
+		led2_out <= "1111111";
+		led3_out <= "1111111";
+	else			
+		case digit0 is
+			when "0000" => led0_out <= "1000000"; 
+			when "0001" => led0_out <= "1111001"; 
+			when "0010" => led0_out <= "0100100"; 
+			when "0011" => led0_out <= "0110000"; 
+			when "0100" => led0_out <= "0011001"; 
+			when "0101" => led0_out <= "0010010"; 
+			when "0110" => led0_out <= "0000010"; 
+			when "0111" => led0_out <= "1111000";
+			when "1000" => led0_out <= "0000000";
+			when "1001" => led0_out <= "0010000"; 
+			when others => led0_out <= "1111111"; 
+		end case;
+		case digit1 is
+			when "0000" => led1_out <= "1000000"; 
+			when "0001" => led1_out <= "1111001"; 
+			when "0010" => led1_out <= "0100100";
+			when "0011" => led1_out <= "0110000";
+			when "0100" => led1_out <= "0011001";
+			when "0101" => led1_out <= "0010010";
+			when "0110" => led1_out <= "0000010";
+			when "0111" => led1_out <= "1111000";
+			when "1000" => led1_out <= "0000000";
+			when "1001" => led1_out <= "0010000";
+			when others => led1_out <= "1111111";
+		end case;
+		case digit2 is
+			when "0000" => led2_out <= "1000000";
+			when "0001" => led2_out <= "1111001";
+			when "0010" => led2_out <= "0100100";
+			when "0011" => led2_out <= "0110000";
+			when "0100" => led2_out <= "0011001";
+			when "0101" => led2_out <= "0010010";
+			when "0110" => led2_out <= "0000010";
+			when "0111" => led2_out <= "1111000";
+			when "1000" => led2_out <= "0000000";
+			when "1001" => led2_out <= "0010000";
+			when others => led2_out <= "1111111";
+		end case;
+		case digit3 is
+			when "0000" => led3_out <= "1000000";
+			when "0001" => led3_out <= "1111001";
+			when "0010" => led3_out <= "0100100";
+			when "0011" => led3_out <= "0110000";
+			when "0100" => led3_out <= "0011001";
+			when "0101" => led3_out <= "0010010";
+			when "0110" => led3_out <= "0000010";
+			when "0111" => led3_out <= "1111000";
+			when "1000" => led3_out <= "0000000";
+			when "1001" => led3_out <= "0010000";
+			when others => led3_out <= "1111111";
+		end case;
+		
+	end if;
+end process Display_Digits;
+
+
+end architecture display_score;

@@ -1,0 +1,19 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_ARITH.all;
+USE  IEEE.STD_LOGIC_UNSIGNED.all;
+
+entity colours is
+
+port(ball_in : in std_logic;
+  red, green, blue : out std_logic);
+end entity colours;
+
+
+architecture behaviour of colours is
+  begin
+    
+    red <= ball_in;
+    green <= '0';
+    blue <= '0';   
+end architecture;
