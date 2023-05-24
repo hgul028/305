@@ -5,8 +5,6 @@ sw7 => health:inst15.pause
 mouse_data <> MOUSE:inst11.mouse_data
 mouse_clk <> MOUSE:inst11.mouse_clk
 btn_reset => state_controller:inst8.btn_reset
-btn_start => state_controller:inst8.btn_start
-btn_pause => state_controller:inst8.btn_pause
 sw_gamemode => state_controller:inst8.sw_gamemode
 vert_sync_out <= VGA_SYNC:inst3.vert_sync_out
 blue_out[0] <= VGA_SYNC:inst3.blue_out[0]
@@ -28,7 +26,6 @@ seg0[3] <= bcd:inst1.led0_out[3]
 seg0[4] <= bcd:inst1.led0_out[4]
 seg0[5] <= bcd:inst1.led0_out[5]
 seg0[6] <= bcd:inst1.led0_out[6]
-seg0[7] <= bcd:inst1.led0_out[7]
 seg1[0] <= bcd:inst1.led1_out[0]
 seg1[1] <= bcd:inst1.led1_out[1]
 seg1[2] <= bcd:inst1.led1_out[2]
@@ -36,7 +33,6 @@ seg1[3] <= bcd:inst1.led1_out[3]
 seg1[4] <= bcd:inst1.led1_out[4]
 seg1[5] <= bcd:inst1.led1_out[5]
 seg1[6] <= bcd:inst1.led1_out[6]
-seg1[7] <= bcd:inst1.led1_out[7]
 seg2[0] <= bcd:inst1.led2_out[0]
 seg2[1] <= bcd:inst1.led2_out[1]
 seg2[2] <= bcd:inst1.led2_out[2]
@@ -44,7 +40,6 @@ seg2[3] <= bcd:inst1.led2_out[3]
 seg2[4] <= bcd:inst1.led2_out[4]
 seg2[5] <= bcd:inst1.led2_out[5]
 seg2[6] <= bcd:inst1.led2_out[6]
-seg2[7] <= bcd:inst1.led2_out[7]
 seg3[0] <= bcd:inst1.led3_out[0]
 seg3[1] <= bcd:inst1.led3_out[1]
 seg3[2] <= bcd:inst1.led3_out[2]
@@ -52,7 +47,8 @@ seg3[3] <= bcd:inst1.led3_out[3]
 seg3[4] <= bcd:inst1.led3_out[4]
 seg3[5] <= bcd:inst1.led3_out[5]
 seg3[6] <= bcd:inst1.led3_out[6]
-seg3[7] <= bcd:inst1.led3_out[7]
+btn_start => ~NO_FANOUT~
+btn_pause => ~NO_FANOUT~
 
 
 |mini_project|VGA_SYNC:inst3

@@ -1,5 +1,5 @@
 Flow report for mini_project
-Wed May 24 09:40:23 2023
+Wed May 24 23:07:47 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -38,24 +38,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+------------------------------------------------------------------------------+
-; Flow Summary                                                                 ;
-+-----------------------------+------------------------------------------------+
-; Flow Status                 ; Flow Failed - Wed May 24 09:40:23 2023         ;
-; Quartus Prime Version       ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
-; Revision Name               ; mini_project                                   ;
-; Top-level Entity Name       ; mini_project                                   ;
-; Family                      ; Cyclone V                                      ;
-; Device                      ; 5CGXFC7C7F23C8                                 ;
-; Timing Models               ; Final                                          ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
-; Total registers             ; N/A until Partition Merge                      ;
-; Total pins                  ; N/A until Partition Merge                      ;
-; Total virtual pins          ; N/A until Partition Merge                      ;
-; Total block memory bits     ; N/A until Partition Merge                      ;
-; Total PLLs                  ; N/A until Partition Merge                      ;
-; Total DLLs                  ; N/A until Partition Merge                      ;
-+-----------------------------+------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++---------------------------------+------------------------------------------------+
+; Flow Status                     ; Successful - Wed May 24 23:07:47 2023          ;
+; Quartus Prime Version           ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Revision Name                   ; mini_project                                   ;
+; Top-level Entity Name           ; mini_project                                   ;
+; Family                          ; Cyclone V                                      ;
+; Device                          ; 5CEBA4F23C7                                    ;
+; Timing Models                   ; Final                                          ;
+; Logic utilization (in ALMs)     ; 892 / 18,480 ( 5 % )                           ;
+; Total registers                 ; 410                                            ;
+; Total pins                      ; 50 / 224 ( 22 % )                              ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                          ;
+; Total DSP Blocks                ; 0 / 66 ( 0 % )                                 ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 1 / 4 ( 25 % )                                 ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
++---------------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/24/2023 09:40:16 ;
+; Start date & time ; 05/24/2023 23:05:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mini_project        ;
 +-------------------+---------------------+
@@ -74,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 1097159734353.168487801616812          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 1097159734353.168492633061500          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (VHDL)               ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
@@ -100,8 +105,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4862 MB             ; 00:00:10                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:10                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4969 MB             ; 00:00:09                           ;
+; Fitter               ; 00:01:53     ; 1.1                     ; 7524 MB             ; 00:02:16                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4875 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:06     ; 2.2                     ; 5276 MB             ; 00:00:08                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4831 MB             ; 00:00:01                           ;
+; Total                ; 00:02:14     ; --                      ; --                  ; 00:02:37                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -111,6 +120,10 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; DESKTOP-7N4I224  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-7N4I224  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-7N4I224  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-7N4I224  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7N4I224  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -118,6 +131,10 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off mini_project -c mini_project
+quartus_fit --read_settings_files=off --write_settings_files=off mini_project -c mini_project
+quartus_asm --read_settings_files=off --write_settings_files=off mini_project -c mini_project
+quartus_sta mini_project -c mini_project
+quartus_eda --read_settings_files=off --write_settings_files=off mini_project -c mini_project
 
 
 

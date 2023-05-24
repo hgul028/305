@@ -1,10 +1,10 @@
-/* Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition */
+/* Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP3C16F484) Path("C:/Users/digge/OneDrive/Documents/GitHub/Mini_Project/mini_project/output_files/") File("mini_project.sof") MfrSpec(OpMask(1));
+		Device PartName(5CEBA4F23) Path("C:/305/mini_project/output_files/") File("mini_project.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -1,0 +1,197 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "horiz_sync_out",
+					"strict" : false
+				},
+				{
+					"name" : "vert_sync_out",
+					"strict" : false
+				},
+				{
+					"name" : "blue_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "green_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "green_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "green_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "green_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "red_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "red_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "red_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "red_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mouse_data",
+					"strict" : false
+				},
+				{
+					"name" : "mouse_clk",
+					"strict" : false
+				},
+				{
+					"name" : "btn_reset",
+					"strict" : false
+				},
+				{
+					"name" : "sw_gamemode",
+					"strict" : false
+				},
+				{
+					"name" : "sw7",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
